@@ -13,7 +13,36 @@
 <body>
     <!--==================== NAV ====================-->
     <nav class="nav">
-       
+       <ul class="nav__list">
+        <li>
+            <a href="#home" title="Home" class="nav__link">
+                <i class="ri-home-line"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="#projects" title="Projects" class="nav__link">
+                <i class="ri-folder-line"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="#services" title="Services" class="nav__link">
+                <i class="ri-file-edit-line"></i>
+            </a>
+        </li>
+        
+        <li>
+            <a href="#experience" title="Experience" class="nav__link">
+                <i class="ri-honour-line"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact" title="Contact" class="nav__link">
+                <i class="ri-send-plane-line"></i>
+            </a>
+       </ul>
     </nav>
 
     <!--==================== MAIN ====================-->
@@ -22,7 +51,18 @@
        <section class="home section" id="home">
           <div class="home__container container grid">
              <!--===== PERFIL =====-->
+            <div class="perfil">
+                <img src="@{/img/perfil-home.jpg}" alt="image" class="perfil__img">
 
+                <div class="perfil__data">
+                    <h1 class="perfil perfil__name">Juan Martin<br> Sanchez</h1>
+                    
+                    <div class="perfil__buttons">
+                        <a href="#projects" class="button">Projects</a>
+                        <a href="#services" class="button button__black">Services</a>
+                    </div>
+                </div>
+            </div>
 
              <!--===== INFO =====-->
 
