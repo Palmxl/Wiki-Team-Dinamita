@@ -444,7 +444,11 @@
   }
   
   /*=============== SERVICES ===============*/
-  
+  .services__card{
+    background-color: var(--container-color);
+    padding: 4rem 1.5rem 3.5rem 1.5rem;
+    border-radius: 1;
+  }
   
   /*=============== EXPERIENCE ===============*/
   
