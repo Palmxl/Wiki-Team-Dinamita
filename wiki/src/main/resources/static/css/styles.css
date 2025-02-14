@@ -257,7 +257,7 @@
   .info__img{
     width: 140px;
     justify-self: center;
-    align-self: flex-end;
+    transform: translateY(-75px);
   }
 
   .info__description{
@@ -311,7 +311,7 @@
   .about__img{
     width: 250px;
     justify-self: center;
-    transform: translateY(-2.5rem);
+    transform: translateY(-8.6rem);
   }
 
   .about__note{
