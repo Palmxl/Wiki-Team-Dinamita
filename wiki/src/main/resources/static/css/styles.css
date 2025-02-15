@@ -886,9 +886,9 @@
       column-gap: 3rem;
     }
 
-    .footer__copy{
-      margin-top: 7cap;
-    }
+    /*.footer__copy{
+      margin-top: 7rem;
+    }*/
   }
 
   @media screen and (min-width: 1500px){
