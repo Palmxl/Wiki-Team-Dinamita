@@ -178,6 +178,40 @@
   }
   
   /*=============== HOME ===============*/
+  /*=============== CUSTOM-ARROW ===============*/
+  /*.custom-arrow {
+    position: fixed;
+    top: 40px;  /* Bajamos la flecha *
+    left: 40px; /* La alejamos del borde *
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 154, 158, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000; /* Se asegura de estar por encima de otros elementos *
+}
+
+.custom-arrow::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-left: 4px solid white;
+    border-bottom: 4px solid white;
+    transform: rotate(45deg);
+    margin-left: -3px; /* Ajuste fino de posición *
+}
+
+.custom-arrow:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 154, 158, 1);
+}*/
+
+
   /*===== PERFIL =====*/
   .perfil{
     position: relative;

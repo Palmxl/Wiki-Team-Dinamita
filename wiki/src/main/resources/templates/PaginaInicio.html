@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/img/nombreFoto.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Página Inicio - Team Dinamita</title>
+    <style>
+        body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Roboto Mono', monospace; /* Fuente más moderna */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container-main {
+    width: 80%;
+    max-width: 960px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #111;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.perfil__name {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px; /* Botones más redondos */
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.btn-red { /* Nueva clase para botones rojos */
+    background-color: #ff0000; /* Rojo */
+}
+
+.btn-red:hover {
+    background-color: #cc0000; /* Rojo más oscuro al pasar el cursor */
+}
+    </style>
+</head>
+<body>
+    <main class="container-main">
+        <section class="section-home" id="home">
+            <div class="grid-container">
+                <div class="card">
+                    <h1 class="perfil__name">Team Dinamita</h1>
+                    <div class="card-buttons">
+                        <a th:href="@{/Juan}" class="btn">Integrantes</a>
+                        <a th:href="@{/descripcion-proyecto}" class="btn btn-red">Proyecto: Arrienda tu Finca</a>
+                        <a th:href="@{/arquitectura-proyecto}" class="btn">Arquitectura del Proyecto</a>
+                        <a th:href="@{/requerimientos-proyecto}" class="btn btn-red">Requerimientos</a>
+                        <a th:href="@{/pruebas-proyecto}" class="btn">Pruebas</a>
+                        <a th:href="@{/despliegue-proyecto}" class="btn btn-red">Despliegue</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            gsap.from(".perfil__name", { opacity: 0, y: -50, duration: 1 });
+            gsap.from(".card-buttons a", { opacity: 0, y: 20, duration: 1, stagger: 0.2 });
+        </script>
+    </main>
+</body>
+</html>
