@@ -8,9 +8,25 @@
     <link rel="shortcut icon" href="/img/nombreFoto.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <title>Integrantes - JM</title>
+    <style>
+        /* Estilos para la flecha */
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #333; /* Color de la flecha */
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .back-arrow:hover {
+            color: #007bff; /* Color al pasar el cursor */
+        }
+    </style>
 </head>
 <body>
-    
+      
     <!--==================== NAV ====================-->
     <nav class="nav">
        <ul class="nav__list">
@@ -47,7 +63,9 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
-        <a th:href="@{/PaginaInicio}" class="custom-arrow"></a>
+        <a th:href="@{/PaginaInicio}" class="back-arrow">
+            <i class="ri-arrow-left-s-line"></i> 
+        </a>  
        <!--==================== HOME ====================-->
        <section class="home section" id="home">
           <div class="home__container container grid">
@@ -280,10 +298,23 @@
 
        <!--==================== CONTACT ====================-->
        <section class="contact section" id="contact">
-        <div class="contact__container container grid">
-            <a th:href="@{/formulario/formulario}" class="button contact__button">Contáctanos!</a>
-        </div>
-    </section>      
+            <h2 class="section__title">Contáctanos</h2>
+
+            <div class="contact__container container grid">
+                <form action="" class="contact__form grid" id="contact-form">
+                    <div class="contact__group grid">
+                        <input type="text" name="user_name" placeholder="Names" required class="contact__input">
+                        <input type="email" name="user_email" placeholder="Email" required class="contact__input">
+                    </div>
+
+                    <textarea name="user_message" placeholder="Message" class="contact__input contact__area"></textarea>
+                    
+                    <button type="submit" class="button contact__button">Enviar Mensaje</button>
+
+                    <p class="contact__message" id="contact-message"></p>
+                </form>
+            </div>
+        </section>     
     </main>
 
     <!--==================== FOOTER ====================-->

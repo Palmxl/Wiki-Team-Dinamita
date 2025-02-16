@@ -7,22 +7,41 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="shortcut icon" href="/img/nombreFoto.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
-    <title>Página Inicio</title>
+    <title>Contáctanos</title>
+    <style>
+        /* Estilos para la flecha */
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #333; /* Color de la flecha */
+            text-decoration: none;
+        }
+
+        .back-arrow:hover {
+            color: #007bff; /* Color al pasar el cursor */
+        }
+    </style>
 </head>
     <body>
+        <a th:href="@{/PaginaInicio}" class="back-arrow">
+            <i class="ri-arrow-left-s-line"></i> 
+        </a>    
         <section class="contact section" id="contact">
             <h2 class="section__title">Contáctanos</h2>
   
             <div class="contact__container container grid">
               <form action="" class="contact__form grid" id="contact-form">
                   <div class="contact__group grid">
-                      <input type="text" name="user_name" placeholder="Names" required class="contact__input">
-                      <input type="email" name="user_email" placeholder="Email" required class="contact__input">
+                      <input type="text" name="user_name" placeholder="Names" required class="contact__input" maxlength="100">
+                      <input type="email" name="user_email" placeholder="Email" required class="contact__input" maxlength="100">
                   </div>
   
                   <textarea name="user_message" placeholder="Message" class="contact__input contact__area"></textarea>
                   
                   <button type="submit" class="button contact__button">Enviar Mensaje</button>
+                  <button type="reset" class="button contact__button">Limpiar</button>
   
                   <p class="contact__message" id="contact-message"></p>
               </form>

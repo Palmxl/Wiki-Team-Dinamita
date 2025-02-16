@@ -8,6 +8,22 @@
     <link rel="shortcut icon" href="/img/nombreFoto.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <title>Integrantes - LG</title>
+    <style>
+        /* Estilos para la flecha */
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #333; /* Color de la flecha */
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .back-arrow:hover {
+            color: #007bff; /* Color al pasar el cursor */
+        }
+    </style>
 </head>
 <body>
     <!--==================== NAV ====================-->
@@ -46,6 +62,9 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
+        <a th:href="@{/PaginaInicio}" class="back-arrow">
+            <i class="ri-arrow-left-s-line"></i> 
+        </a>
        <!--==================== HOME ====================-->
        <section class="home section" id="home">
           <div class="home__container container grid">

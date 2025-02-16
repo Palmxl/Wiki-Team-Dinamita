@@ -1,5 +1,8 @@
 package co.edu.javeriana.wiki.repositories;
 
-public class DespliegueRepository {
+//import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface DespliegueRepository /*extends JpaRepository<Despliegue, Long>*/{
 
 }
