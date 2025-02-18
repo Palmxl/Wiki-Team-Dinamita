@@ -25,7 +25,7 @@ public class contactoController {
     public String mostrarFormulario(Model model) {
         model.addAttribute("contact", new Contacto());
         return "formulario/formulario";
-    }   
+    }
 
     @PostMapping("/guardarFormulario")
     public String guardarFormulario(@ModelAttribute Contacto contact, Model model) {
@@ -33,6 +33,5 @@ public class contactoController {
         model.addAttribute("message", "Mensaje enviado con éxito!");
         return "redirect:/formulario/formulario";
     }
-
 }
 
