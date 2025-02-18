@@ -32,19 +32,18 @@
             <h2 class="section__title">Contáctanos</h2>
   
             <div class="contact__container container grid">
-              <form th:action="@{/formulario/guardarFormulario}" method="POST" class="contact__form grid" id="contact-form" th:object="${contact}">
+              <form action="" class="contact__form grid" id="contact-form">
                   <div class="contact__group grid">
-                      <input type="text" th:field="*{nombre}" placeholder="Names" required class="contact__input" maxlength="100">
-                      <input type="email" th:field="*{correo}" placeholder="Email" required class="contact__input" maxlength="100">
+                      <input type="text" name="user_name" placeholder="Names" required class="contact__input" maxlength="100">
+                      <input type="email" name="user_email" placeholder="Email" required class="contact__input" maxlength="100">
                   </div>
   
-                  <textarea th:field="*{mensaje}" placeholder="Message" class="contact__input contact__area"></textarea>
+                  <textarea name="user_message" placeholder="Message" class="contact__input contact__area"></textarea>
                   
                   <button type="submit" class="button contact__button">Enviar Mensaje</button>
                   <button type="reset" class="button contact__button">Limpiar</button>
   
                   <p class="contact__message" id="contact-message"></p>
-                  <p class="contact__message" th:text="${message}"></p>
               </form>
             </div>
          </section>
