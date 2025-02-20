@@ -15,12 +15,24 @@
             top: 20px;
             left: 20px;
             font-size: 2em;
-            color: #333; /* Color de la flecha */
+            color: #333;
             text-decoration: none;
         }
 
         .back-arrow:hover {
-            color: #007bff; /* Color al pasar el cursor */
+            color: #007bff;
+        }
+
+        #contact-form .contact__group .contact__input[type="text"]{
+            grid-column: 1/3;
+            width: 620px;
+            justify-self: center; 
+        }
+
+        #contact-form .contact__group .contact__input[type="email"]{
+            grid-column: 1/3;
+            width: 620px;
+            justify-self: center; 
         }
 
         #contact-form .contact__group .contact__input[type="number"] {
@@ -28,33 +40,113 @@
             width: 620px;
             justify-self: center;
         }
-        
+
+        /* Estilos para los contadores */
+        .char-counter {
+            font-size: 0.9em;
+            color: gray;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        /* Estilos de error */
+        .contact__input.error {
+            border: 2px solid red !important;
+            background-color: rgba(255, 50, 50, 0.3) !important; /* Un rojo más visible */
+            color: white !important; /* Asegura que el texto sea legible */
+        }
+
     </style>
 </head>
-    <body>
-        <a th:href="@{/PaginaInicio}" class="back-arrow">
-            <i class="ri-arrow-left-s-line"></i> 
-        </a>    
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Contáctanos</h2>
-  
-            <div class="contact__container container grid">
-              <form th:action="@{/formulario/guardarFormulario}" method="POST" class="contact__form grid" id="contact-form" th:object="${contact}">
-                  <div class="contact__group grid">
-                      <input type="text" th:field="*{nombre}" placeholder="Names" required class="contact__input" maxlength="100">
-                      <input type="email" th:field="*{correo}" placeholder="Email" required class="contact__input" maxlength="100">
-                      <input type="number" th:field="*{semestre}" placeholder="Semester" required class="contact__input" min="0" max="16">
-                  </div>
-  
-                  <textarea th:field="*{mensaje}" placeholder="Message" class="contact__input contact__area"></textarea>
-                  
-                  <button type="submit" class="button contact__button">Enviar Mensaje</button>
-                  <button type="reset" class="button contact__button">Limpiar</button>
-  
-                  <p class="contact__message" id="contact-message"></p>
-                  <p class="contact__message" th:text="${message}"></p>
-              </form>
-            </div>
-         </section>
-    </body>
+<body>
+    <a th:href="@{/PaginaInicio}" class="back-arrow">
+        <i class="ri-arrow-left-s-line"></i> 
+    </a>    
+
+    <section class="contact section" id="contact">
+        <h2 class="section__title">Contáctanos</h2>
+
+        <div class="contact__container container grid">
+            <form th:action="@{/formulario/guardarFormulario}" method="POST" class="contact__form grid" id="contact-form" th:object="${contact}">
+                <div class="contact__group grid">
+                    
+                    <input type="text" th:field="*{nombre}" placeholder="Names" required class="contact__input" oninput="updateCounter(this, 'nombre-counter', 100)">
+                    <label class="char-counter" id="nombre-counter">0/100</label>
+                    
+                    <input type="email" th:field="*{correo}" placeholder="Email" required class="contact__input" oninput="updateCounter(this, 'correo-counter', 100)">
+                    <label class="char-counter" id="correo-counter">0/100</label>
+
+                    <input type="number" th:field="*{semestre}" placeholder="Semester" required class="contact__input" min="0" max="16" oninput="updateCounter(this, 'semestre-counter', 16)">
+                </div>
+
+                
+                <textarea th:field="*{mensaje}" placeholder="Message" class="contact__input contact__area" oninput="updateCounter(this, 'mensaje-counter', 300)"></textarea>
+                <label class="char-counter" id="mensaje-counter">0/300</label>
+                <button type="submit" class="button contact__button">Enviar Mensaje</button>
+                <button type="reset" class="button contact__button">Limpiar</button>
+
+                <p class="contact__message" id="contact-message"></p>
+                <p class="contact__message" th:text="${message}"></p>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function updateCounter(input, counterId, maxLength) {
+            let counter = document.getElementById(counterId);
+            counter.textContent = input.value.length + "/" + maxLength;
+        }
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            let nombre = document.querySelector("input[name='nombre']");
+            let correo = document.querySelector("input[name='correo']");
+            let semestre = document.querySelector("input[name='semestre']");
+            let mensaje = document.querySelector("textarea[name='mensaje']");
+            let emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+
+            // Función para quitar errores previos
+            function clearErrors() {
+                let fields = [nombre, correo, semestre, mensaje];
+                fields.forEach(field => field.classList.remove("error"));
+            }
+
+            clearErrors();
+
+            let hasError = false;
+
+            // Validación de nombre
+            if (nombre.value.trim() === "") {
+                nombre.classList.add("error");
+                hasError = true;
+            }
+
+            // Validación de correo
+            if (correo.value.trim() === "" || !emailRegex.test(correo.value)) {
+                correo.classList.add("error");
+                hasError = true;
+            }
+
+            // Validación de semestre
+            let semestreValor = parseInt(semestre.value, 10);
+            if (isNaN(semestreValor) || semestreValor < 0 || semestreValor > 16) {
+                semestre.classList.add("error");
+                hasError = true;
+            }
+
+            // Validación de mensaje
+            if (mensaje.value.trim() === "") {
+                mensaje.classList.add("error");
+                hasError = true;
+            }
+
+            // Si hay errores, detener el envío del formulario
+            if (hasError) {
+                alert("Por favor, corrija los campos en rojo.");
+                event.preventDefault();
+            }
+        });
+
+    </script>
+
+</body>
 </html>
