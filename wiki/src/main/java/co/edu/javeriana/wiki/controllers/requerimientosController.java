@@ -2,12 +2,13 @@ package co.edu.javeriana.wiki.controllers;
 
 //Controlador de requisitos del proyecto
 import org.springframework.stereotype.Controller;
-
-
-
-
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
+@RequestMapping("/")
 public class requerimientosController {
-
+    @GetMapping("requerimientos-proyecto")
+    public String despliegueR() {
+        return "proyecto/requerimientos-proyecto";
+    }
 }
