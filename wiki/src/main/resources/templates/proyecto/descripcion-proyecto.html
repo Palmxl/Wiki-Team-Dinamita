@@ -8,8 +8,37 @@
     <link rel="icon" type="image/png" href="/favicon/housekeeping.png">   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <title>Descripción del Proyecto</title>
+
+    <style>
+        /* Estilos para la flecha */
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #333; /* Color de la flecha */
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .back-arrow:hover {
+            color: #007bff; /* Color al pasar el cursor */
+        }
+    </style>
 </head>
 <body>
-    
+    <main class = "main">
+        <a th:href="@{/}" class="back-arrow">
+            <i class="ri-arrow-left-s-line"></i> 
+        </a>
+
+        
+
+
+
+
+
+
+    </main>
 </body>
 </html>
