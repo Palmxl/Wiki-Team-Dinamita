@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" type="image/png" href="/favicon/web-development.png">   
+    <link rel="icon" type="image/png" href="/favicon/web-development.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <title>Arquitectura del Proyecto</title>
     <style>
@@ -15,13 +15,118 @@
             top: 20px;
             left: 20px;
             font-size: 2em;
-            color: #333; /* Color de la flecha */
+            color: #333;
             text-decoration: none;
             z-index: 10;
         }
 
         .back-arrow:hover {
-            color: #007bff; /* Color al pasar el cursor */
+            color: #007bff;
+        }
+
+        .architecture-section {
+            padding: 2rem;
+        }
+
+        .architecture-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .architecture-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .architecture-section img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .architecture-section ul {
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos para la descripción principal */
+        .architecture-description {
+            background-color: #f0f0f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Estilos para los tres cuadros superiores */
+        .top-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .top-grid-item {
+            background-color: #f0f0f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para los dos cuadros inferiores */
+        .bottom-grid {
+            display: flex; /* Usamos flexbox para la alineación en línea */
+            justify-content: center; /* Centrar horizontalmente */
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .bottom-grid-item {
+            background-color: #f0f0f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Ancho fijo para mantenerlos en línea */
+        }
+
+        .grid-item h3, .grid-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .section__title {
+            font-size: 2.5rem; /* Tamaño de fuente más grande */
+            font-weight: 700; /* Negrita */
+            text-align: center; /* Centrar el texto */
+            margin-bottom: 2rem; /* Espacio debajo del título */
+            color: var(--title-color); /* Color del título */
+            text-transform: uppercase; /* Mayúsculas */
+            letter-spacing: 2px; /* Espaciado entre letras */
+            position: relative; /* Para la línea decorativa */
+        }
+
+        .section__title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -0.5rem; /* Posición de la línea */
+            transform: translateX(-50%);
+            width: 80px; /* Ancho de la línea */
+            height: 3px; /* Grosor de la línea */
+            background-color: var(--first-color); /* Color de la línea */
+        }
+        /* Efecto de entrada */
+        .architecture-description,
+        .top-grid-item,
+        .bottom-grid-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .architecture-description.show,
+        .top-grid-item.show,
+        .bottom-grid-item.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -30,6 +135,79 @@
         <a th:href="@{/}" class="back-arrow">
             <i class="ri-arrow-left-s-line"></i>
         </a>
+
+        <section class="architecture-section section" id="architecture">
+            <h2 class="section__title">Arquitectura del Proyecto</h2>
+
+            <div class="architecture-section__container container">
+                <div class="architecture-description">
+                    <h3>Arquitectura del Proyecto</h3>
+                    <p>
+                        [Textos realizados por el profesor y complementados por el equipo]
+                    </p>
+                </div>
+
+                <div class="top-grid">
+                    <div class="top-grid-item">
+                        <h3>Diagramas de referencia C4</h3>
+
+                        <h4>Diagrama de contexto</h4>
+                        <img src="/img/diagrama-contexto.png" alt="Diagrama de contexto">
+                        <p>
+                            [Descripción del diagrama de contexto]
+                        </p>
+                    </div>
+
+                    <div class="top-grid-item">
+                        <h4>Diagrama del contenedor</h4>
+                        <img src="/img/diagrama-contenedor.png" alt="Diagrama del contenedor">
+                        <p>
+                            [Descripción del diagrama del contenedor]
+                        </p>
+                    </div>
+
+                    <div class="top-grid-item">
+                        <h4>Diagrama de componentes</h4>
+                        <img src="/img/diagrama-componentes.png" alt="Diagrama de componentes">
+                        <p>
+                            [Descripción del diagrama de componentes]
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bottom-grid">
+                    <div class="bottom-grid-item">
+                        <h3>Modelos</h3>
+
+                        <h4>Entidad/Relación: Diccionario</h4>
+                        <img src="/img/diagrama-er.png" alt="Diagrama Entidad/Relación">
+                        <p>
+                            [Descripción del modelo Entidad/Relación]
+                        </p>
+                    </div>
+
+                    <div class="bottom-grid-item">
+                        <h4>Diagrama de despliegue</h4>
+                        <img src="/img/diagrama-despliegue.png" alt="Diagrama de despliegue">
+                        <p>
+                            [Descripción del diagrama de despliegue]
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    <a th:href="@{/}" target="_blank">Volver a la página de inicio</a>
+                </p>
+            </div>
+        </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.architecture-description, .top-grid-item, .bottom-grid-item');
+            elements.forEach(element => {
+                element.classList.add('show');
+            });
+        });
+    </script>
 </body>
 </html>
