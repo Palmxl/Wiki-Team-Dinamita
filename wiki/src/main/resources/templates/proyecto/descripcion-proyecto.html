@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" type="image/png" href="/favicon/housekeeping.png">   
+    <link rel="icon" type="image/png" href="/favicon/housekeeping.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <title>Descripción del Proyecto</title>
 
@@ -24,21 +24,233 @@
         .back-arrow:hover {
             color: #007bff; /* Color al pasar el cursor */
         }
+
+        .project-description {
+            padding: 2rem;
+        }
+
+        .project-description h2 {
+            margin-bottom: 1rem;
+        }
+
+        .project-description p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-description ul, .project-description ol {
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos para los cuadritos variados */
+        .project-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--container-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .project-card img, .project-card i {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            object-fit: cover;
+            font-size: 3rem;
+        }
+
+        /* Estilos para secciones con texto largo */
+        .long-text-section {
+            background-color: var(--container-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-card {
+            background-color: var(--container-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .tech-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-section .project-card,
+        .long-text-section,
+        .tech-section .tech-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .project-section .project-card.show,
+        .long-text-section.show,
+        .tech-section .tech-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section__title {
+            font-size: 2.5rem; /* Tamaño de fuente más grande */
+            font-weight: 700; /* Negrita */
+            text-align: center; /* Centrar el texto */
+            margin-bottom: 2rem; /* Espacio debajo del título */
+            color: var(--title-color); /* Color del título */
+            text-transform: uppercase; /* Mayúsculas */
+            letter-spacing: 2px; /* Espaciado entre letras */
+            position: relative; /* Para la línea decorativa */
+        }
+
+        .section__title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -0.5rem; /* Posición de la línea */
+            transform: translateX(-50%);
+            width: 80px; /* Ancho de la línea */
+            height: 3px; /* Grosor de la línea */
+            background-color: var(--first-color); /* Color de la línea */
+        }
     </style>
 </head>
 <body>
-    <main class = "main">
+    <main class="main">
         <a th:href="@{/}" class="back-arrow">
-            <i class="ri-arrow-left-s-line"></i> 
+            <i class="ri-arrow-left-s-line"></i>
         </a>
 
-        
+        <section class="project-description section" id="project-description">
+            <h2 class="section__title">Descripción del Proyecto</h2>
 
+            <div class="project-description__container container">
+                <div class="project-section">
+                    <div class="project-card">
+                        <img src="/img/tenant.png" alt="Usuario Arrendatario">
+                        <h3>Usuario Arrendatario</h3>
+                        <p>Gestiona propiedades, solicitudes y pagos.</p>
+                    </div>
 
+                    <div class="project-card">
+                        <img src="/img/house.png" alt="Usuario Arrendador">
+                        <h3>Usuario Arrendador</h3>
+                        <p>Busca fincas, solicita y realiza pagos.</p>
+                    </div>
 
+                    <div class="project-card">
+                        <i class="ri-code-s-slash-line"></i>
+                        <h3>Backend/Frontend</h3>
+                        <p>Spring REST, JPA, Angular.</p>
+                    </div>
 
+                    <div class="project-card">
+                        <i class="ri-cloud-line"></i>
+                        <h3>Kubernetes</h3>
+                        <p>Despliegue en Kubernetes.</p>
+                    </div>
+                </div>
 
+                <div class="long-text-section">
+                    <h3>Descripción Detallada</h3>
+                    <p>
+                        Para el desarrollo de esta aplicación, se deben considerar dos perfiles de usuarios principales: el “Usuario Arrendatario” y el “Usuario Arrendado”.
+                    </p>
+                    <p>
+                        El “Usuario Arrendatario” tendrá la capacidad de realizar una variedad de acciones relacionadas con la gestión de propiedades y la interacción con otros usuarios. Entre estas acciones se incluyen la creación, edición, eliminación y actualización de propiedades disponibles para arrendamiento. Además, este usuario será responsable de revisar y responder a todas las solicitudes de arrendamiento recibidas, teniendo la opción de aceptarlas o cancelarlas según corresponda. También será su responsabilidad verificar los pagos realizados por los arrendadores y proporcionar calificaciones y comentarios sobre la experiencia de arrendamiento.
+                    </p>
+                    <p>
+                        Por otro lado, el “Usuario Arrendador” tendrá un conjunto diferente de funcionalidades diseñadas para facilitar el proceso de búsqueda y arrendamiento de propiedades. Este usuario podrá buscar fincas disponibles filtradas por ubicación geográfica, así como solicitar el arrendamiento de una finca específica. Una vez que se apruebe la solicitud, el arrendador podrá realizar el pago correspondiente del arriendo y, posteriormente, calificar tanto la finca arrendada como al arrendatario.
+                    </p>
+                </div>
 
+                <div class="tech-section">
+                    <div class="tech-card">
+                        <i class="ri-database-line"></i>
+                        <h3>Spring Boot</h3>
+                        <p>Desarrollo backend.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="ri-computer-line"></i>
+                        <h3>Spring REST</h3>
+                        <p>API de servicios.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="ri-database-2-line"></i>
+                        <h3>JPA</h3>
+                        <p>Persistencia de datos.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="ri-angularjs-line"></i>
+                        <h3>Angular</h3>
+                        <p>Desarrollo frontend.</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <i class="ri-upload-cloud-line"></i>
+                        <h3>Kubernetes</h3>
+                        <p>Despliegue de la aplicación.</p>
+                    </div>
+                </div>
+
+                <p>
+                    <a href="https://dw.dynaco.co/proyecto-arrienda-tu-finca/historias-de-usuario" target="_blank">Ver historias de usuario</a>
+                </p>
+
+                <p>
+                    <a th:href="@{/}" target="_blank">Volver a la página de inicio</a>
+                </p>
+
+            </div>
+        </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.project-section .project-card, .long-text-section, .tech-section .tech-card');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
 </body>
 </html>
