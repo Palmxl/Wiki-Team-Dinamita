@@ -21,7 +21,7 @@
         }
 
         .back-arrow:hover {
-            color: red; /* Cambiado a rojo */
+            color: red;
         }
 
         .deployment-section {
@@ -47,7 +47,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: red; /* Cambiado a rojo */
+            background-color: red;
         }
 
         .deployment-section__container {
@@ -61,6 +61,14 @@
             padding: 1.5rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
+            opacity: 0; /* Inicialmente invisible */
+            transform: translateY(20px); /* Desplazado hacia abajo */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transición suave */
+        }
+
+        .version-card.show {
+            opacity: 1; /* Visible */
+            transform: translateY(0); /* Posición original */
         }
 
         .version-card h3 {
@@ -69,7 +77,7 @@
 
         .version-status {
             font-weight: bold;
-            color: red; /* Cambiado a rojo */
+            color: red;
             margin-bottom: 0.5rem;
         }
 
@@ -81,18 +89,6 @@
 
         .version-description {
             margin-left: 1.5rem;
-        }
-
-        /* Efecto de entrada */
-        .version-card {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .version-card.show {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -137,7 +133,7 @@
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('load', function() {
             const elements = document.querySelectorAll('.version-card');
             elements.forEach(element => {
                 element.classList.add('show');
