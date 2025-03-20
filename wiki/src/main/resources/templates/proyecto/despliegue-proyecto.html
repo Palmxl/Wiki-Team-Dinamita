@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" type="image/png" href="/favicon/deployment.png">   
+    <link rel="icon" type="image/png" href="/favicon/deployment.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <title>Despliegue del Proyecto</title>
     <style>
@@ -15,13 +15,84 @@
             top: 20px;
             left: 20px;
             font-size: 2em;
-            color: #333; /* Color de la flecha */
+            color: #333;
             text-decoration: none;
             z-index: 10;
         }
 
         .back-arrow:hover {
-            color: #007bff; /* Color al pasar el cursor */
+            color: red; /* Cambiado a rojo */
+        }
+
+        .deployment-section {
+            padding: 2rem;
+        }
+
+        .section__title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -0.5rem;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: red; /* Cambiado a rojo */
+        }
+
+        .deployment-section__container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .version-card {
+            background-color: #f0f0f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .version-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .version-status {
+            font-weight: bold;
+            color: red; /* Cambiado a rojo */
+            margin-bottom: 0.5rem;
+        }
+
+        .version-date {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .version-description {
+            margin-left: 1.5rem;
+        }
+
+        /* Efecto de entrada */
+        .version-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .version-card.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -30,7 +101,48 @@
         <a th:href="@{/}" class="back-arrow">
             <i class="ri-arrow-left-s-line"></i>
         </a>
+
+        <section class="deployment-section section" id="deployment">
+            <h2 class="section__title">Despliegue del Proyecto</h2>
+
+            <div class="deployment-section__container container">
+                <div class="version-card">
+                    <h3>v1.1.0</h3>
+                    <span class="version-status">Producción</span>
+                    <p class="version-date">2025-02-20</p>
+                    <ul class="version-description">
+                        <li>Despliegue final</li>
+                    </ul>
+                </div>
+
+                <div class="version-card">
+                    <h3>v1.0.0</h3>
+                    <span class="version-status">Producción</span>
+                    <p class="version-date">2025-02-19</p>
+                    <ul class="version-description">
+                        <li>Lanzamiento inicial en docker</li>
+                    </ul>
+                </div>
+
+                <div class="version-card">
+                    <h3>v0.3.0</h3>
+                    <span class="version-status">Desarrollo</span>
+                    <p class="version-date">2025-02-19</p>
+                    <ul class="version-description">
+                        <li>Estructura y diseño de paginas terminado</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.version-card');
+            elements.forEach(element => {
+                element.classList.add('show');
+            });
+        });
+    </script>
 </body>
 </html>
