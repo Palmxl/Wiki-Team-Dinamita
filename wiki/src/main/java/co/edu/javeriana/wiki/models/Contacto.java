@@ -25,3 +25,12 @@ public class Contacto {
     private String mensaje;
     private int semestre;
 }
+
+/*CREATE TABLE CONTACTO (
+    id IDENTITY PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    correo VARCHAR(255) NOT NULL,
+    mensaje TEXT NOT NULL,
+    semestre INT NOT NULL
+);
+ */

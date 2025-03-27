@@ -1,5 +1,8 @@
 package co.edu.javeriana.wiki.repositories;
 
-public interface ArquitecturaRepository {
+//import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface ArquitecturaRepository /*extends JpaRepository<Arquitectura, Long>*/{
 
 }

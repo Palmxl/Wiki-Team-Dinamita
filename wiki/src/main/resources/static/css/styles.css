@@ -4,16 +4,16 @@
     /*========== Colors ==========*/
     /*Color mode HSL(hue, saturation, lightness)*/
     /* 
-          Change favorite color:
+           Change favorite color:
   
-          Default (Red): hsl(358, 80%, 49%)
-          Purple: hsl(265, 80%, 49%) - Blue: hsl(220, 80%, 49%)
-          Pink: hsl(330, 80%, 49%) - Green: hsl(162, 70%, 40%)
-          Orange: hsl(14, 80%, 49%)
+           Default (Red): hsl(358, 80%, 49%)
+           Purple: hsl(265, 80%, 49%) - Blue: hsl(220, 80%, 49%)
+           Pink: hsl(330, 80%, 49%) - Green: hsl(162, 70%, 40%)
+           Orange: hsl(14, 80%, 49%)
   
-          For more colors visit: https://htmlcolorcodes.com/
-          -> Choose any color 
-          -> Copy the color mode (HSL)
+           For more colors visit: https://htmlcolorcodes.com/
+           -> Choose any color 
+           -> Copy the color mode (HSL)
     */
     --hue: 358;
     --first-color: hsl(var(--hue), 80%, 49%);

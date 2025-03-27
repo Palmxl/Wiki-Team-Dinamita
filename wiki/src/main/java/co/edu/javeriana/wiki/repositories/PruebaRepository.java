@@ -1,4 +1,8 @@
 package co.edu.javeriana.wiki.repositories;
 
-public interface PruebaRepository{
+//import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface PruebaRepository /*extends JpaRepository<Prueba, Long>*/{
+
 }

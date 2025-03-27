@@ -1,4 +1,7 @@
 package co.edu.javeriana.wiki.repositories;
 
-public interface RequerimientosRepository{
+//import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RequerimientosRepository /*extends JpaRepository<Requerimientos, Long>*/{
+
 }
