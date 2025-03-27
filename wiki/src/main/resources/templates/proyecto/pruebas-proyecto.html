@@ -190,7 +190,7 @@
             </div>
 
             <div class="test-type">
-                <h3>Pruebas Unitarias</h3>
+                <h3>Pruebas Funcionales</h3>
                 <table class="test-table">
                     <thead>
                         <tr>
@@ -207,94 +207,72 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
+                            <td>U-01</td>
+                            <td>Crear usuario</td>
+                            <td>Verifica que se pueda registrar un nuevo usuario con datos válidos</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Servicio de usuarios</td>
+                            <td>Usuario creado exitosamente (200 OK)</td>
+                            <td>Usuario creado con ID asignado</td>
+                            <td>Sí</td>
                         </tr>
                         <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
+                            <td>U-02</td>
+                            <td>Obtener usuarios activos</td>
+                            <td>Verifica que se retornen solo los usuarios con status activo</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Base de datos con usuarios</td>
+                            <td>Lista con usuarios activos</td>
+                            <td>Lista recibida correctamente</td>
+                            <td>Sí</td>
                         </tr>
                         <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
+                            <td>U-03</td>
+                            <td>Obtener todos los usuarios</td>
+                            <td>Muestra todos los usuarios, incluidos los eliminados (soft delete)</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Base de datos con usuarios</td>
+                            <td>Lista completa con usuarios (activos e inactivos)</td>
+                            <td>Lista recibida correctamente</td>
+                            <td>Sí</td>
                         </tr>
                         <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
+                            <td>U-04</td>
+                            <td>Actualizar usuario</td>
+                            <td>Prueba la modificación de datos de un usuario existente por su ID</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Usuario previamente creado</td>
+                            <td>Datos actualizados y respuesta 200 OK</td>
+                            <td>Datos actualizados correctamente</td>
+                            <td>Sí</td>
                         </tr>
                         <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
+                            <td>U-05</td>
+                            <td>Eliminar usuario (lógico)</td>
+                            <td>Valida que se pueda marcar un usuario como eliminado usando su ID</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Usuario existente</td>
+                            <td>Código 204 No Content</td>
+                            <td>Usuario eliminado lógicamente</td>
+                            <td>Sí</td>
                         </tr>
                         <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
+                            <td>U-06</td>
+                            <td>Consultar usuario por ID</td>
+                            <td>Verifica que se pueda recuperar la información de un usuario específico</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Luis Felipe Gutiérrez</td>
+                            <td>Usuario con ID válido</td>
+                            <td>Datos del usuario consultado correctamente (200 OK)</td>
+                            <td>Información recibida según ID especificado</td>
+                            <td>Sí</td>
                         </tr>
-                        <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
-                        </tr>
-                        <tr>
-                            <td>[ID]</td>
-                            <td>[Título]</td>
-                            <td>[Descripción]</td>
-                            <td>[Diseñador]</td>
-                            <td>[Ejecutor]</td>
-                            <td>[Dependencias]</td>
-                            <td>[Resultados esperados]</td>
-                            <td>[Resultados reales]</td>
-                            <td>[Sí/No]</td>
-                        </tr>
-                        </tbody>
+                    </tbody>
                 </table>
             </div>
 
