@@ -15,13 +15,80 @@
             top: 20px;
             left: 20px;
             font-size: 2em;
-            color: #333; /* Color de la flecha */
+            color: #333;
             text-decoration: none;
             z-index: 10;
         }
 
         .back-arrow:hover {
-            color: #007bff; /* Color al pasar el cursor */
+            color: red;
+        }
+
+        .tests-section {
+            padding: 2rem;
+        }
+
+        .section__title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -0.5rem;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: red;
+        }
+
+        .test-type {
+            margin-bottom: 2rem;
+        }
+
+        .test-type h3 {
+            margin-bottom: 1rem;
+        }
+
+        .test-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .test-table th, .test-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .test-table th {
+            background-color: #f2f2f2;
+        }
+
+        .sonarqube-report {
+            margin-top: 2rem;
+        }
+
+        /* Efecto de entrada */
+        .test-type,
+        .sonarqube-report {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .test-type.show,
+        .sonarqube-report.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -31,36 +98,211 @@
             <i class="ri-arrow-left-s-line"></i>
         </a>
 
-        <section class="deployment-section section" id="deployment">
-            <h2 class="section__title">Despliegue del Proyecto</h2>
+        <section class="tests-section section" id="tests">
+            <h2 class="section__title">Pruebas del Proyecto</h2>
 
-            <div class="deployment-section__container container">
-                <div class="version-card">
-                    <h3>v1.1.0</h3>
-                    <span class="version-status">Producción</span>
-                    <p class="version-date">2025-02-20</p>
-                    <ul class="version-description">
-                        <li>Despliegue final</li>
-                    </ul>
-                </div>
+            <div class="test-type">
+                <h3>Pruebas de Carga</h3>
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th>ID de la prueba</th>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Diseñada por</th>
+                            <th>Ejecutada por</th>
+                            <th>Dependencias de las pruebas</th>
+                            <th>Resultados esperados</th>
+                            <th>Resultados reales</th>
+                            <th>Cumplió</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        
+                        </tbody>
+                </table>
+            </div>
 
-                <div class="version-card">
-                    <h3>v1.0.0</h3>
-                    <span class="version-status">Producción</span>
-                    <p class="version-date">2025-02-19</p>
-                    <ul class="version-description">
-                        <li>Lanzamiento inicial en docker</li>
-                    </ul>
-                </div>
+            <div class="test-type">
+                <h3>Pruebas Unitarias</h3>
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th>ID de la prueba</th>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Diseñada por</th>
+                            <th>Ejecutada por</th>
+                            <th>Dependencias de las pruebas</th>
+                            <th>Resultados esperados</th>
+                            <th>Resultados reales</th>
+                            <th>Cumplió</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        <tr>
+                            <td>[ID]</td>
+                            <td>[Título]</td>
+                            <td>[Descripción]</td>
+                            <td>[Diseñador]</td>
+                            <td>[Ejecutor]</td>
+                            <td>[Dependencias]</td>
+                            <td>[Resultados esperados]</td>
+                            <td>[Resultados reales]</td>
+                            <td>[Sí/No]</td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
 
-                <div class="version-card">
-                    <h3>v0.3.0</h3>
-                    <span class="version-status">Desarrollo</span>
-                    <p class="version-date">2025-02-19</p>
-                    <ul class="version-description">
-                        <li>Estructura y diseño de paginas terminado</li>
-                    </ul>
-                </div>
+            <div class="sonarqube-report">
+                <h3>Reporte de SonarQube</h3>
+                <p>
+                    [Aquí puedes agregar el reporte de SonarQube o un enlace al mismo.]
+                </p>
             </div>
         </section>        
     </main>
@@ -89,13 +331,13 @@
         </span>
      </footer>
      
-    <script>
+     <script>
         window.addEventListener('load', function() {
-            const elements = document.querySelectorAll('.version-card');
+            const elements = document.querySelectorAll('.test-type, .sonarqube-report');
             elements.forEach(element => {
                 element.classList.add('show');
             });
         });
-    </script> 
+    </script>
 </body>
 </html>
