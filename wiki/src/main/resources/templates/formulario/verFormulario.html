@@ -37,24 +37,22 @@
         </a>    
         <section class="contact section" id="contact">
             <h2 class="section__title">Contáctanos</h2>
-  
+
             <div class="contact__container container grid">
-              <form th:action="@{/formulario/guardarFormulario}" method="POST" class="contact__form grid" id="contact-form" th:object="${contact}">
-                  <div class="contact__group grid">
-                      <input type="text" th:field="*{nombre}" placeholder="Names" required class="contact__input" maxlength="100">
-                      <input type="email" th:field="*{correo}" placeholder="Email" required class="contact__input" maxlength="100">
-                      <input type="number" th:field="*{semestre}" placeholder="Semester" required class="contact__input" min="0" max="16">
-                  </div>
-  
-                  <textarea th:field="*{mensaje}" placeholder="Message" class="contact__input contact__area"></textarea>
-                  
-                  <button type="submit" class="button contact__button">Enviar Mensaje</button>
-                  <button type="reset" class="button contact__button">Limpiar</button>
-  
-                  <p class="contact__message" id="contact-message"></p>
-                  <p class="contact__message" th:text="${message}"></p>
-              </form>
+                <form th:action="@{/formulario/guardarFormulario}" method="POST" class="contact__form grid" id="contact-form" th:object="${contact}">
+                <div class="contact__group grid">
+                    <input type="text" th:field="*{nombre}" placeholder="Names" required class="contact__input" maxlength="100">
+                    <input type="email" th:field="*{correo}" placeholder="Email" required class="contact__input" maxlength="100">
+                    <input type="number" th:field="*{semestre}" placeholder="Semester" required class="contact__input" min="0" max="16">
+                </div>
+
+                <textarea th:field="*{mensaje}" placeholder="Message" class="contact__input contact__area"></textarea>
+                <button type="submit" class="button contact__button">Enviar Mensaje</button>
+                <button type="reset" class="button contact__button">Limpiar</button>
+                <p class="contact__message" id="contact-message"></p>
+                <p class="contact__message" th:text="${message}"></p>
+            </form>
             </div>
-         </section>
+        </section>
     </body>
 </html>

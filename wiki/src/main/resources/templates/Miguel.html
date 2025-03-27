@@ -36,7 +36,7 @@
 <body>
     <!--==================== NAV ====================-->
     <nav class="nav">
-       <ul class="nav__list">
+        <ul class="nav__list">
         <li>
             <a href="#home" title="Home" class="nav__link active-link"> <!--Integrantes"-->
                 <i class="ri-home-line"></i>
@@ -65,7 +65,7 @@
             <a href="#contact" title="Contact" class="nav__link"> <!--formulario de contacto-->
                 <i class="ri-send-plane-line"></i>
             </a>
-       </ul>
+        </ul>
     </nav>
 
     <!--==================== MAIN ====================-->
@@ -73,10 +73,10 @@
         <a th:href="@{/}" class="back-arrow">
             <i class="ri-arrow-left-s-line"></i> 
         </a>
-       <!--==================== HOME ====================-->
-       <section class="home section" id="home">
-          <div class="home__container container grid">
-             <!--===== PERFIL =====-->
+    <!--==================== HOME ====================-->
+    <section class="home section" id="home">
+        <div class="home__container container grid">
+            <!--===== PERFIL =====-->
             <div class="perfil">
                 <img src="\img\Miguel3.jpeg" alt="image" class="perfil__img">
 
@@ -95,7 +95,7 @@
                 </div>
             </div>
 
-             <!--===== INFO =====-->
+            <!--===== INFO =====-->
             <div class="info">
                 <div class="info__data">
                     <div class="info__circle"></div>
@@ -112,7 +112,7 @@
 
             </div>
 
-             <!--===== ABOUT =====-->
+            <!--===== ABOUT =====-->
             <div class="about">
                 <h3 class="about__name">
                     Miguel Angel Duarte - <b>FRONT-END INTERESADO EN VIRTUALIZACION<br>LIDER DE PRUEBAS</b>
@@ -142,8 +142,8 @@
                 <a href="#contact" class="button">Contactame</a>
             </div>
 
-             <!--===== SKILLS =====-->
-             <div class="skills">
+            <!--===== SKILLS =====-->
+            <div class="skills">
                 <h2 class="skills__title">Skills</h2>
                 <div class="skills__items">
                     <img src="\img\skills-html.svg" alt="image" class="skills__item">
@@ -161,17 +161,17 @@
                     Mi rol sera trabajar en el Frontend.
                 
                 </p>
-             </div>
-          </div>
-       </section>
-
-       <!--==================== PROJECTS ====================-->
-       <section class="projects section" id="projects">
-          <h2 class="section__title">
+            </div>
+        </div>
+    </section>
+    
+    <!--==================== PROJECTS ====================-->
+    <section class="projects section" id="projects">
+        <h2 class="section__title">
             PROYECTOS RECIENTES
-          </h2>
+        </h2>
 
-          <div class="projects__container container grid">
+        <div class="projects__container container grid">
             <article class="projects__card">
                 <a href="https://github.com/MiguelDu020/Proyecto-de-Manipulaci-n-de-Registros-y-Alertas.git" target="_blank" class="projects__image">
                     <img src="\img\ASM.png" alt="image" class="projects__img">
@@ -180,8 +180,8 @@
                     <h3 class="projects__name">Proyecto de Manipulacion de Registros y Alertas</h3>
                     <p class="projects__description">
                         Este proyecto consiste en un programa desarrollado en lenguaje ensamblador MIPS para realizar
-                         la manipulación de registros de actividad del sistema y la generación de alertas basadas en ciertos
-                          criterios predefinidos.
+                        la manipulación de registros de actividad del sistema y la generación de alertas basadas en ciertos
+                        criterios predefinidos.
                     </p>
 
                     <a href="https://github.com/MiguelDu020/Proyecto-de-Manipulaci-n-de-Registros-y-Alertas.git" target="_blank" class="projects__button">
@@ -190,13 +190,11 @@
                     </a>
                 </div>
             </article>
-          </div>
-          
-       </section>
-
-       <!--==================== SERVICES ====================-->
-
-       <section class="services section" id="services">
+        </div>
+    </section>
+    
+    <!--==================== SERVICES ====================-->
+    <section class="services section" id="services">
         <h2 class="section__title">SERVICIOS</h2>
 
         <div class="services__container container grid">
@@ -226,30 +224,30 @@
                 </p>
             </article>
         </div>
-       </section>
-
-       <!--==================== EXPERIENCE ====================-->
-       <section class="experience section" id="experience">
-          <h2 class="section__title">EXPERIENCIA</h2>
-          <div class="experience__container container grid">
+    </section>
+    
+    <!--==================== EXPERIENCE ====================-->
+    <section class="experience section" id="experience">
+        <h2 class="section__title">EXPERIENCIA</h2>
+        <div class="experience__container container grid">
             <article class="experience__card">
                 <h2 class="experience__company">PONTIFICIA UNIVERSIDAD JAVERIANA</h2>
                 <div class="experience__data">
                     <h3 class="experience__profession">Ingeniería de Sistemas</h3>
                     <span class="experience__date">2022 - Actualidad</span>
                     <p class="experience__description">
-                       Comence la carrera en el 2022 y me ha parecido interesante pero aun no he encontrado algo en esta que me apasione.
+                    Comence la carrera en el 2022 y me ha parecido interesante pero aun no he encontrado algo en esta que me apasione.
                     </p>
                 </div>
             </article>
-          </div>
-       </section>
+        </div>
+    </section>
 
-       <!--==================== CONTACT ====================-->
-       <section class="contact section" id="contact">
-          <h2 class="section__title">Contáctanos</h2>
+    <!--==================== CONTACT ====================-->
+    <section class="contact section" id="contact">
+        <h2 class="section__title">Contáctanos</h2>
 
-          <div class="contact__container container grid">
+        <div class="contact__container container grid">
             <form action="" class="contact__form grid" id="contact-form">
                 <div class="contact__group grid">
                     <input type="text" name="user_name" placeholder="Names" required class="contact__input">
@@ -262,13 +260,13 @@
                 <button type="reset" class="button contact__button">Limpiar</button>
                 <p class="contact__message" id="contact-message"></p>
             </form>
-          </div>
-       </section>
+        </div>
+    </section>
     </main>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">
-       <div class="footer__container container grid">
+        <div class="footer__container container grid">
         <div class="footer__content grid">
             <a href="" class="footer__logo">Team Dinamita</a>
 
@@ -299,10 +297,10 @@
                 <i class="ri-twitter-x-line"></i>
             </a>
         </div>
-       </div>
-       <span class="footer__copy">
+    </div>
+    <span class="footer__copy">
         &copy; 2025 Team Dinamita. All right reserved
-       </span>
+    </span>
     </footer>
 
     <!--========== SCROLL UP ==========-->
@@ -318,6 +316,6 @@
 
     <!--=============== MAIN JS ===============-->
     <script src="\js\javascript.js"></script>
- </body>
+</body>
 </html>
 <!--<a href="/contacto">Contactanos!</a>-->
